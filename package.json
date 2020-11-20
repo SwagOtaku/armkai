@@ -14,7 +14,8 @@
   "dependencies": {
     "sirv-cli": "^1.0.1",
     "node-fetch": "^2.1.2",
-    "cheerio": "0.22.0"
+    "cheerio": "0.22.0",
+    "fuzzyset": "1.0.5"
   },
   "scripts": {
     "build": "rollup -c",
