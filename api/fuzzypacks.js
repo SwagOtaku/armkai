@@ -7,17 +7,15 @@ module.exports = async (req, res) => {
   const list = dict.split(",")
   const titles = match.split("|")
   
-  var a = fuzzy(list, false);
+  var a = fuzzy(titles, false);
   
   const cloudfiles = []
   
-  for (let i = 0; i < titles.length; i++) {
-    const best_match = a.get(titles[i], null, .40);
+  for (let i = 0; i < list.length; i++) {
+    const best_match = a.get(list[i], null, .40);
     if (best_match) {
-      for (let k = 0; k < best_match.length; k++) {
-        var best = best_match[k][1].slice(-1)
-        cloudfiles.push(best)
-      }
+      var best = i
+      cloudfiles.push(best)
     }
   }
   
